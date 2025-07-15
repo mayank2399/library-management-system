@@ -9,6 +9,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinColumns;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import lombok.Getter;
@@ -36,7 +37,9 @@ public class Book extends BaseEntity {
 	private User user;
 
 	@ManyToOne
-	@JoinColumn
+	@JoinColumns({ @JoinColumn(name = "auther_id", referencedColumnName = "id "),
+			@JoinColumn(name = "auther_email", referencedColumnName = "email") })
+
 	private Author author;
 
 	@OneToMany(mappedBy = "book")
