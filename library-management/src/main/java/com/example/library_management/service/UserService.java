@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.library_management.dto.UserCreatedRequest;
 import com.example.library_management.dto.UserCreatedResponse;
-import com.example.library_management.enums.UserFilter;
+import com.example.library_management.enums.UserFilterTypes;
 import com.example.library_management.enums.UserStatus;
 import com.example.library_management.enums.UserType;
 import com.example.library_management.model.User;
@@ -29,7 +29,7 @@ public class UserService {
 		return userCreatedResponse;
 	}
 
-	public List<UserCreatedResponse> filter(UserFilter userFilter, String operator, String value) {
+	public List<UserCreatedResponse> filter(UserFilterTypes userFilter, String operator, String value) {
 		return null;
 	}
 

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.library_management.dto.UserCreatedRequest;
 import com.example.library_management.dto.UserCreatedResponse;
-import com.example.library_management.enums.UserFilter;
+import com.example.library_management.enums.UserFilterTypes;
 import com.example.library_management.service.UserService;
 
 @RestController
@@ -32,6 +32,6 @@ public class UserController {
 	@GetMapping("/filter")
 	public List<UserCreatedResponse> getUserFilterByPhone(@RequestParam("filterBy") String filterBy,
 			@RequestParam("operator") String operator, @RequestParam("value") String value) {
-		return userService.filter(UserFilter.valueOf(filterBy), operator, value);
+		return userService.filter(UserFilterTypes.valueOf(filterBy), operator, value);
 	}
 }

@@ -1,6 +1,6 @@
 package com.example.library_management.enums;
 
-public enum UserFilter {
+public enum UserFilterTypes {
 
 	NAME, EMAIL, PHONE_NO;
 }
